@@ -1,0 +1,19 @@
+var sprite = new Sprite(game.width, game.height);
+sprite.backgroundColor = "yellow";
+
+        var tip = game.assets['http://enchantjs.com/assets/images/map0.gif'];
+      	var surface = new Surface(game.width, game.height);
+      	var s = {
+      		x:16*9, y:16
+      		,width:16,height:16
+      	}
+        for (var i = 0; i < 320; i += 64){
+        	surface.draw(
+        		tip,s.x,s.y // image,sx,sy
+        		,s.width,s.height// ,sw,sh
+        		, i, 0// ,dx,dy
+        		,16,16// ,dw,dh
+        	);
+        }
+        sprite.image = surface;
+        game.rootScene.addChild(sprite);
